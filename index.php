@@ -1,9 +1,27 @@
 <!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
+<?php
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $to = 'priyank.vasa5@gmail.com';
+  $subject = test_input($_POST["subject"]) . ' - ' . $name;
+  $message = test_input($_POST["message"]);
+  $headers = 'From: ' . test_input($_POST["email"]) . "\r\n" .
+        'Reply-To: ' . test_input($_POST["email"]) . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+  mail($to, $subject, $message, $headers);
+}
+    
+?>
+
 <html>
 	<head>
 		<title>Priyank Vasa</title>
@@ -146,7 +164,7 @@
 					<div>
 						<div class="row">
 							<div class="12u">
-								<form method="post" action="#">
+								<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 									<div>
 										<div class="row">
 											<div class="6u 12u(mobile)">
