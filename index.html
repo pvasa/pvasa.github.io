@@ -1,27 +1,4 @@
 <!DOCTYPE HTML>
-
-<!--<?php
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["name"]);
-  $to = 'priyank.vasa5@gmail.com';
-  $subject = test_input($_POST["subject"]) . ' - ' . $name;
-  $message = test_input($_POST["message"]);
-  $headers = 'From: ' . test_input($_POST["email"]) . "\r\n" .
-        'Reply-To: ' . test_input($_POST["email"]) . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-  mail($to, $subject, $message, $headers);
-}
-    
-?>-->
-
 <html>
 	<head>
 		<title>Priyank Vasa</title>
@@ -52,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				<article class="container" id="top">
 					<div class="row">
 						<div class="4u 12u(mobile)">
-							<span class="image fit"><img src="images/me.jpg" alt="" /></span>
+							<span class="image fit"><img src="assets/images/me.jpg" alt="" /></span>
 						</div>
 						<div class="8u 12u(mobile)">
 							<header>
@@ -75,21 +52,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						<div class="row">
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
-									<a href="https://play.google.com/store/apps/details?id=matrians.instapaysam" target="_blank" class="image featured"><img src="images/instapay.jpg" alt="" /></a>
+									<a href="https://play.google.com/store/apps/details?id=matrians.instapaysam" target="_blank" class="image featured"><img src="assets/images/instapay.jpg" alt="" /></a>
 									<h3><a href="https://play.google.com/store/apps/details?id=matrians.instapaysam" target="_blank">InstaPay</a></h3>
 									<p>Buy fast, pay easy. No more long queues while shopping.</p>
 								</article>
 							</div>
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
-									<a href="https://github.com/ryanm652/FManager.git" target="_blank" class="image featured"><img src="images/fmanager.jpg" alt="" /></a>
+									<a href="https://github.com/ryanm652/FManager.git" target="_blank" class="image featured"><img src="assets/images/fmanager.jpg" alt="" /></a>
 									<h3><a href="https://github.com/ryanm652/FManager.git" target="_blank">FManager</a></h3>
 									<p>It is an Android file manager with encryption capabilities.</p>
 								</article>
 							</div>
 							<div class="4u 12u(mobile)">
 								<article class="box style2">
-									<a href="https://github.com/ryan872/System.git" target="_blank" class="image featured"><img src="images/system.jpg" alt="" /></a>
+									<a href="https://github.com/ryan872/System.git" target="_blank" class="image featured"><img src="assets/images/system.jpg" alt="" /></a>
 									<h3><a href="https://github.com/ryan872/System.git" target="_blank">System</a></h3>
 									<p>It is a surveillence service which can access the whole Android device whenever requested from outside without the device owner's consent.</p>
 								</article>
