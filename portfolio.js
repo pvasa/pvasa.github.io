@@ -73,4 +73,6 @@ server.post(`/`, function (req, res) {
     });
 });
 
-server.listen(PORT, IP);
+server.listen(PORT, IP, function() {
+    console.log(`Portfolio available on ${IP}:${PORT}`);
+});
