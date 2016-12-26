@@ -62,11 +62,11 @@ server.post(`/`, function (req, res) {
         if (err) {
             res.status(300);
             return console.log(err);
-            res.send(`Error`);
+            res.send({"message": "error"});
         } else {
             res.status(200);
             return console.log(`E-mail sent: ${info.response}`);
-            res.send(`Success`);
+            res.send({"message": "success"});
         }
     });
 });

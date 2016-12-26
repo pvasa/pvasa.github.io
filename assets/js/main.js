@@ -71,17 +71,12 @@ $(document).ready(function() {
     	$(`.contact-form`).hide();
 	else $(`.contact-link`).hide();
 
-	$("#contact-form").on(`submit`, function(e) {
+	$("#contact-form").submit(function(e) {
 
 		var endPoint = "/";
 
-		$.ajax({
-			type: "POST",
-			url: endPoint,
-			data: $("#contact-form").serialize(), // serializes the form's elements.
-			success: function(data) {
-				alert(data);
-			}
+		$.post( "/", $( "#contact-form" ).serialize(), function(res) {
+			alert(res.message);
 		});
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
