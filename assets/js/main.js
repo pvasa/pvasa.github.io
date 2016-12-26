@@ -72,17 +72,16 @@ $(document).ready(function() {
 	else $(`.contact-link`).hide();
 
 	$("#contact-form").on("submit", function(e) {
-
-		var endPoint = "/";
-
 		$.ajax({
 			method: "POST",
 			url: "/",
-			data: $( "#contact-form" ).serialize()
-		}).done(function(success) {
-			alert(`Success: ${success.message}` );
-		}).fail(function(err) {
-			alert(`Error: ${err.message}` );
+			data: $( "#contact-form" ).serialize(),
+			success: function(success) {
+				alert(`Success: ${success.message}` );
+			},
+			error: function(err) {
+				alert(`Error: ${err.message}` );
+			}
 		});
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.

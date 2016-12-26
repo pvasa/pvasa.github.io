@@ -44,7 +44,7 @@ server.get(`/*`, function (req, res) {
 
 server.post(`/`, function (req, res) {
 
-    console.log(`REQUEST FOR MAIL: ${req.body}`);
+    console.log(`REQUEST FOR MAIL: ${JSON.stringify(req.body)}`);
 
     let smtpConfig = {
         service: "gmail",
