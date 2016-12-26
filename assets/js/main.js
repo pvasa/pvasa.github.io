@@ -79,8 +79,10 @@ $(document).ready(function() {
 			success: function(success) {
 				alert(`Success: ${success.message}` );
 			},
-			error: function(err) {
-				alert(`Error: ${err.message}` );
+			statusCode: {
+				500: function(xhr) {
+					alert(`Error: ${xhr.message}` );
+				}
 			}
 		});
 
