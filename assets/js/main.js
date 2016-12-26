@@ -80,12 +80,11 @@ $(document).ready(function() {
 				alert(`Success: ${success.message}` );
 			},
 			statusCode: {
-				500: function(xhr) {
-					alert(`Error: ${xhr.message}` );
+				500: function() {
+					alert(`Error: There was some problem sending message. Please email to priyank.vasa5@gmail.com` );
 				}
 			}
 		});
-
 		e.preventDefault(); // avoid to execute the actual submit of the form.
 	});
 });
