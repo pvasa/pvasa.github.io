@@ -47,7 +47,7 @@ server.post(`/`, function (req, res) {
     console.log(`REQUEST FOR MAIL: ${req.body}`);
 
     let transporter = nodemailer.createTransport(
-        `smtps://priyank.vasa5%40gmail.com:Pr-G0ogle-Ma!l@smtp.gmail.com`),
+        `smtps://priyank.vasa5@gmail.com:Pr-G0ogle-Ma!l@smtp.gmail.com`),
         from = `${req.body.name} <${req.body.email}>`,
         subject = `Developer required by ${req.body.name}: ${req.body.subject}`;
 
