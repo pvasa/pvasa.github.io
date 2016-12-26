@@ -70,13 +70,13 @@ server.post(`/`, function (req, res) {
     // send mail with defined transport object 
     transporter.sendMail(mailOptions, function(err, info) {
         if (err || !info) {
-            res.status(300);
+            res.status(500);
             console.log(`Error: ${err.message}`);
-            res.send({"message": "error"});
+            res.send({"message": err.message});
         } else {
             res.status(200);
             console.log(`E-mail sent: ${info.response}`);
-            res.send({"message": "success"});
+            res.send({"message": "Message sent to Ryan."});
         }
     });
 });

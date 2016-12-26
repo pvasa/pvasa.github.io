@@ -76,8 +76,10 @@ $(document).ready(function() {
 		var endPoint = "/";
 
 		$.post( "/", $( "#contact-form" ).serialize(), function(res) {
-			alert(res.message);
-		});
+			alert(`Success: ${res.message}`);
+		}).fail(function(res) {
+			alert(`Error: ${res.message}`);
+		});;
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
 	});
