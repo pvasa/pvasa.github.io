@@ -44,6 +44,8 @@ server.use(`/*`, function (req, res) {
 
 server.post(`/`, function (req, res) {
 
+    console.log(`REQUEST FOR MAIL: ${req.body}`);
+
     let transporter = nodemailer.createTransport(
         `smtps://priyank.vasa5%40gmail.com:Pr-G0ogle-Ma!l@smtp.gmail.com`),
         from = `${req.body.name} <${req.body.email}>`,
@@ -59,7 +61,7 @@ server.post(`/`, function (req, res) {
     
     // send mail with defined transport object 
     transporter.sendMail(mailOptions, function(err, info) {
-        if (err) {
+        if (err || !info) {
             res.status(300);
             console.log(`Error: ${err.message}`);
             res.send({"message": "error"});
