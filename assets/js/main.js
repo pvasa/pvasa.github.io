@@ -71,7 +71,7 @@ $(document).ready(function() {
     	$(`.contact-form`).hide();
 	else $(`.contact-link`).hide();
 
-	$("#contact-form").submit(function(e) {
+	$("#contact-form").on(`submit`, function(e) {
 
 		var endPoint = "/";
 
