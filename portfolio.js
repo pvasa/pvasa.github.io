@@ -49,7 +49,8 @@ server.post(`/`, function (req, res) {
     let smtpConfig = {
         host: "smtp.mailgun.org",
         port: 587,
-        secure: true, // use SSL 
+        secure: false,
+        requireTLS: true,
         auth: {
             user: "postmaster@mail.matrians.com",
             pass: "3kh9umujora5"
