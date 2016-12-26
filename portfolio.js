@@ -61,11 +61,11 @@ server.post(`/`, function (req, res) {
     transporter.sendMail(mailOptions, function(err, info) {
         if (err) {
             res.status(300);
-            return console.log(err);
+            console.log(`Error: ${err.message}`);
             res.send({"message": "error"});
         } else {
             res.status(200);
-            return console.log(`E-mail sent: ${info.response}`);
+            console.log(`E-mail sent: ${info.response}`);
             res.send({"message": "success"});
         }
     });
