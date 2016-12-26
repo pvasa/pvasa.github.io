@@ -72,7 +72,7 @@ server.post(`/`, function (req, res) {
         if (err || !info) {
             res.status(500);
             console.log(`Error: ${err.message}`);
-            res.send({"message": err.message});
+            res.send({"message": "There was some problem sending message. Please email to priyank.vasa5@gmail.com"});
         } else {
             res.status(200);
             console.log(`E-mail sent: ${info.response}`);

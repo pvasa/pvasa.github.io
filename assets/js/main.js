@@ -75,11 +75,15 @@ $(document).ready(function() {
 
 		var endPoint = "/";
 
-		$.post( "/", $( "#contact-form" ).serialize(), function(res) {
-			alert(`Success: ${res.message}`);
-		}).fail(function(res) {
-			alert(`Error: ${res.message}`);
-		});;
+		$.ajax({
+			method: "POST",
+			url: "/",
+			data: $( "#contact-form" ).serialize()
+		}).done(function(success) {
+			alert(`Success: ${success.message}` );
+		}).fail(function(err) {
+			alert(`Error: ${err.message}` );
+		});
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
 	});
