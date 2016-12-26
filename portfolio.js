@@ -47,11 +47,11 @@ server.post(`/`, function (req, res) {
     console.log(`REQUEST FOR MAIL: ${JSON.stringify(req.body)}`);
 
     let smtpConfig = {
-        service: "gmail",
+        service: "Mailgun",
         secure: true, // use SSL
         auth: {
-            user: "priyank.vasa5@gmail.com",
-            pass: "Pr-G0ogle-Ma!l"
+            user: "postmaster@mail.matrians.com",
+            pass: "3kh9umujora5"
         }
     };
 
