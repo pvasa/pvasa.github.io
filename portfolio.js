@@ -38,11 +38,11 @@ server.get(`/`, function (req, res) {
 });
 
 // Redirect every get request to /
-server.use(`/*`, function (req, res) {
+server.get(`/*`, function (req, res) {
     res.redirect(`/`);
 });
 
-server.post(`/contact`, function (req, res) {
+server.post(`/`, function (req, res) {
 
     console.log(`REQUEST FOR MAIL: ${req.body}`);
 
