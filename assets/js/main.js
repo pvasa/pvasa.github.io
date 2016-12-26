@@ -71,7 +71,7 @@ $(document).ready(function() {
     	$(`.contact-form`).hide();
 	else $(`.contact-link`).hide();
 
-	$("#contact-form").on("submit", function(e) {
+	/*$("#contact-form").on("submit", function(e) {
 
 		var endPoint = "/";
 
@@ -80,6 +80,6 @@ $(document).ready(function() {
 		});
 
 		e.preventDefault(); // avoid to execute the actual submit of the form.
-	});
+	});*/
 
 });
