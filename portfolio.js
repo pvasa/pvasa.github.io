@@ -42,7 +42,7 @@ server.use(`/*`, function (req, res) {
     res.redirect(`/`);
 });
 
-server.post(`/`, function (req, res) {
+server.post(`/contact`, function (req, res) {
 
     console.log(`REQUEST FOR MAIL: ${req.body}`);
 
