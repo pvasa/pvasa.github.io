@@ -62,3 +62,29 @@
 	});
 
 })(jQuery);
+
+$(document).ready(function() {
+	
+    let pathname = $(location).attr(`href`);
+
+	if (pathname.search(`github`) != -1)
+    	$(`.contact-form`).hide();
+	else $(`.contact-link`).hide();
+
+	$("#contact-form").submit(function(e) {
+
+		var endPoint = "/";
+
+		$.ajax({
+			type: "POST",
+			url: endPoint,
+			data: $("#contact-form").serialize(), // serializes the form's elements.
+			success: function(data) {
+				alert(data);
+			}
+		});
+
+		e.preventDefault(); // avoid to execute the actual submit of the form.
+	});
+
+});

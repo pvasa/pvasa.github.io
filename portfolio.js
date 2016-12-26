@@ -47,7 +47,7 @@ server.post(`/`, function (req, res) {
     let transporter = nodemailer.createTransport(
         `smtps://priyank.vasa5%40gmail.com:Pr-G0ogle-Ma!l@smtp.gmail.com`),
         from = `${req.body.name} <${req.body.email}>`,
-        subject = `Developer required: ${req.body.subject}`;
+        subject = `Developer required by ${req.body.name}: ${req.body.subject}`;
 
     // setup e-mail data with unicode symbols
     let mailOptions = {
