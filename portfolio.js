@@ -46,8 +46,16 @@ server.post(`/`, function (req, res) {
 
     console.log(`REQUEST FOR MAIL: ${req.body}`);
 
-    let transporter = nodemailer.createTransport(
-        `smtps://priyank.vasa5@gmail.com:Pr-G0ogle-Ma!l@smtp.gmail.com`),
+    let smtpConfig = {
+        service: "gmail",
+        secure: true, // use SSL
+        auth: {
+            user: "priyank.vasa5@gmail.com",
+            pass: "Pr-G0ogle-Ma!l"
+        }
+    };
+
+    let transporter = nodemailer.createTransport(smtpConfig),
         from = `${req.body.name} <${req.body.email}>`,
         subject = `Developer required by ${req.body.name}: ${req.body.subject}`;
 
