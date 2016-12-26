@@ -47,8 +47,9 @@ server.post(`/`, function (req, res) {
     console.log(`REQUEST FOR MAIL: ${JSON.stringify(req.body)}`);
 
     let smtpConfig = {
-        service: "Mailgun",
-        secure: true, // use SSL
+        host: "smtp.mailgun.org",
+        port: 587,
+        secure: true, // use SSL 
         auth: {
             user: "postmaster@mail.matrians.com",
             pass: "3kh9umujora5"
