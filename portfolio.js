@@ -70,7 +70,7 @@ server.post(`/`, function (req, res) {
     // send mail with defined transport object 
     transporter.sendMail(mailOptions, function(err, info) {
         if (err || !info) {
-            res.status(500);
+            res.status(200);
             console.log(`Error: ${err.message}`);
             res.send({"message": "There was some problem sending message. Please email to priyank.vasa5@gmail.com"});
         } else {
