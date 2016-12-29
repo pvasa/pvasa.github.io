@@ -1,0 +1,30 @@
+body {
+    font-family: 'Love Ya Like A Sister', cursive;
+    background: #eaeaea;
+}
+.logo {
+    text-align: center;
+    font-size: 2.5em;
+}
+.home-btn {
+    margin: 1em;
+}
+.home-btn a {
+    color: #fff;
+    background: #272727;
+    padding: 0.2em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    text-decoration: none;
+    border-radius: 0.1em;
+    font-family: 'Love Ya Like A Sister';
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}	
+.footer {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}
+.footer a {
+    color: rgb(114, 173, 38);
+}

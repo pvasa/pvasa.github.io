@@ -30,16 +30,22 @@ server.set(`view engine`, `pug`);
 
 server.locals.basedir = `${__dirname}`;
 
-// Short paths for css, js, and assets dirs
-server.use(`/assets`, express.static(__dirname + `/assets`));
+server.use(express.static(`${__dirname}/views`, { maxAge: 0 }));
+
+const oneWeek = 604800;
+// Short paths for css, js, images, and fonts dirs
+server.use(`/assets`, express.static(`${__dirname}/assets`, { maxAge: oneWeek }));
 
 server.get(`/`, function (req, res) {
     res.render(`index`);
 });
 
-// Redirect every get request to /
+// 404 for every get request
 server.get(`/*`, function (req, res) {
-    res.redirect(`/`);
+    res.render(`404`);
+});
+server.post(`/*`, function (req, res) {
+    res.render(`404`);
 });
 
 server.post(`/`, function (req, res) {
@@ -52,8 +58,8 @@ server.post(`/`, function (req, res) {
         secure: false,
         requireTLS: true,
         auth: {
-            user: "postmaster@mail.matrians.com",
-            pass: "3kh9umujora5"
+            user: "postmaster@mailer.matrians.com",
+            pass: "Ma!ler@ma1lgun"
         }
     };
 
